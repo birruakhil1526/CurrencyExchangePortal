@@ -1,0 +1,16 @@
+.color{
+    background-color: #eac9f6;
+    border: none;
+}
+.my-card {
+    transition: all 0.3s ease; 
+  }
+  
+  .my-card:hover {
+    transform: scale(1.05); 
+    background-color: #e1abf4;
+  }
+  .cursor{
+    cursor: pointer;
+  }
+  

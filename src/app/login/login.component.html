@@ -1,0 +1,36 @@
+<div class="background-image">
+<h1 class="text-center  fw-bold" style="color: white; letter-spacing: 3px;">You're in good hands</h1>
+<div class="container d-flex justify-content-center align-items-center ">
+  <div class="bg-white p-5 shadow rounded">
+    <div class="text-center mb-4 ">
+      <img src="../../assets/download 2.png" alt="Logo" width="200" height="30">
+  </div>
+      <form [formGroup]="loginDetails">
+          <div class=" d-flex align-items-center">
+            <span class="bi bi-person-fill me-2"></span>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email" required>
+          </div>
+          <div class="text-center mb-3">
+          <section *ngIf="email?.invalid &&(email?.dirty||email?.touched)">
+            <div *ngIf="email?.errors?.['required']" class="asset1">email is required</div>
+        </section>
+    </div>
+          <div class=" d-flex align-items-center">
+            <span class="bi bi-lock-fill me-2"></span>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" formControlName="password" required>
+              
+          </div>
+          <div class="text-center mb-3">
+          <section *ngIf="password?.invalid &&(password?.dirty||password?.touched)">
+            <div *ngIf="password?.errors?.['required']" class="asset1">password is required</div>
+        </section>
+    </div>
+          <div class="text-center">
+            <button type="reset" class="btn btn-danger  ">Reset </button>
+          <button type="submit" class="btn btn-primary  mx-3" (click)="submit()">Login</button>
+          
+        </div>
+      </form>
+  </div>
+</div>
+</div>

@@ -1,0 +1,50 @@
+<div class="text-center">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card shadow border border-none">
+          <div class="card-header background text-white">
+            <h4 class="card-title text-dark my-2">Bank Account Details</h4>
+          </div>
+          <div class="card-body ">
+            <form [formGroup]="customerAccounts">
+              <div class="mb-3" *ngIf="customerService.accountEdit">
+                <label for="accountNumber" class="form-label">Account Number </label>
+                <input type="number" class="form-control" id="accountNumber" placeholder="Enter account number"
+                  formControlName="accountNumber" readonly required>
+              </div>
+              <div class="row">
+                <div class="col-md-3 w-25">
+                  <label for="Currency" class="form-label">Currency<span class="text-danger">*</span></label>
+                  <select *ngIf="!customerService.accountEdit" class="form-select" id="currency"
+                    formControlName="currencyType" required>
+                    <option value="" selected disabled>Select currency</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="INR">INR - Rupees</option>
+                    <option value="SGD">SGD - Singapore Rupee</option>
+                    <option value="PLN">PLN - Palestine Dinar</option>
+                  </select>
+                  <input *ngIf="customerService.accountEdit" type="text" class="form-control" placeholder="Currency"
+                    formControlName="currencyType" readonly required>
+                </div>
+                <div class="col-md-3 w-50 ">
+                  <label for="balance" class="form-label">Account Balance<span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="balance" placeholder="Enter account balance"
+                    formControlName="balance" required>
+                </div>
+                <section *ngIf="balance?.invalid &&(balance?.dirty||balance?.touched)">
+                  <div *ngIf="balance?.errors?.['min']" class="asset1 mb-3">Amount should be positive</div>
+                </section>
+              </div>
+              <button type="submit" class="btn btn-primary mt-3" [disabled]="!customerAccounts.valid" (click)="submit()">{{customerService.accountEdit==true ?
+                'Update' : 'Add'}}</button>
+              <button type="submit"   class="btn btn-danger mx-3 mt-3" (click)="back()">Back</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "mail": "birruakhil@gmail.com",
+      "accountno": 1218669777,
+      "accHolderName": "Akhil",
+      "currencyType": "IND",
+      "accBalance": 12000
+    },
+    {
+      "mail": "veera@gmail.com",
+      "accountno": 122343423333,
+      "accHolderName": "veera Kalyan mawa",
+      "currencyType": "INR",
+      "accBalance": 12000,
+      "id": 2
+    },
+    {
+      "mail": "habi@gmail.com",
+      "accountno": 8786987878,
+      "accHolderName": "habi",
+      "currencyType": "INR",
+      "accBalance": 20000,
+      "id": 4
+    },
+    {
+      "mail": "habi@gmail.com",
+      "accountno": 87678779878,
+      "accHolderName": "habi",
+      "currencyType": "USD",
+      "accBalance": 99899,
+      "id": 5
+    },
+    {
+      "mail": "veeradsd@gmail.com",
+      "accountno": 8789090000098,
+      "accHolderName": "veera",
+      "currencyType": "PLN",
+      "accBalance": 10000,
+      "id": 8
+    },
+    {
+      "mail": "veeradsd@gmail.com",
+      "accountno": 7979999898886,
+      "accHolderName": "veera kalyan",
+      "currencyType": "USD",
+      "accBalance": 90000,
+      "id": 10
+    },
+    {
+      "mail": "jayanth@gmail.com",
+      "accountno": 67898878787,
+      "accHolderName": "jayanth",
+      "currencyType": "USD",
+      "accBalance": 10000,
+      "id": 11
+    }
+  ]
+}
