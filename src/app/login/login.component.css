@@ -1,0 +1,20 @@
+.background-image {
+    background-image: url('../../assets/bank.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.asset1{
+    color: red;
+}
+.swal2-container {
+  position: fixed !important;
+}
+

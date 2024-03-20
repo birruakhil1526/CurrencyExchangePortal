@@ -1,0 +1,39 @@
+
+<div class="text-center">
+  <img *ngIf="customerservice.datanotfoundforAccounts" src="../../../assets/nodatafound.avif" style="justify-content: center; height: 300px;">
+</div>
+  <div class="text-center  col-12">
+    <button type="button" routerLink="/add-accounts" click="accountedit()"  class="btn background rounded-pill my-4 mx-5 shadow" data-mdb-ripple-color="dark">Add<i class="bi bi-plus" ></i></button>
+    </div>
+    <div class=" row  justify-content-center mt-3" *ngIf="loading">
+      <div class="spinner-border text-primary col-1" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+<div class="row container mx-auto w-75" >
+    
+    <div class="col-md-4 mb-1" *ngFor="let customer of customerAccounts">
+        <div class="card mx-auto shadow p-3 mb-5 rounded border text-dark border-0 cardstyle my-card">
+    <div class="row">
+            <div class="card-body col-8">
+                <h5 class="card-title fw-bold">{{customer.accountNumber}}</h5>
+                <h4 class="card-subtitle mb-2  text-uppercase text-truncate">{{customer.accHolderName}}</h4>
+                <h4 class="fw-bold text-truncate">{{customer.currencyType}}: {{customer.balance}}</h4>
+                
+            </div>
+            <div class="dropdown text-center col-4">
+                <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="bi bi-three-dots-vertical"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item text-primary " routerLink="/add-accounts/{{customer.accountNumber}}" (click)="editAccount(customer)"  >Edit</a>
+                  <a class="dropdown-item text-danger" (click)="deleteAccount(customer.accountNumber)">Delete</a>
+                </div>
+                <div  class="fs-6 text-danger mt-5">
+                <h6 class="fw-bold">{{customer.accCreatedAt|date: 'dd/MM/yyyy'}}</h6></div>
+              </div>
+            </div>
+            
+</div>
+
+

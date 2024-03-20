@@ -1,0 +1,38 @@
+.center-content {
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .form-select{
+    color: rgb(101, 98, 98);
+  }
+  .balance {
+    float: right; /* Align the balance text to the right */
+    margin-left: 50px; /* Add some spacing between the currency/account and balance */
+  }
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .background{
+    
+    background-color: rgb(146, 248, 43);
+  }
+  .background-image{
+   background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    flex-direction: column;
+    
+  }
+  .form-label{
+    font-weight: 500;
+    color:rgb(3, 54, 37);
+  }

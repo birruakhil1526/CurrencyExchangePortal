@@ -1,0 +1,52 @@
+{
+  "customers": [
+    {
+      "username": "habikrishna",
+      "gender": "Female",
+      "email": "habi@gmail.com",
+      "phoneno": 7989714750,
+      "password": "bcnkhdsbcnjsd",
+      "id": 9
+    },
+    {
+      "username": "krisss",
+      "gender": "Female",
+      "email": "kriss@gmail.com",
+      "phoneno": 887899879,
+      "password": "smndcbbcdb",
+      "id": 11
+    },
+    {
+      "username": "jenny",
+      "gender": "Female",
+      "email": "jenny@gmail.com",
+      "phoneno": 7809788991,
+      "password": "snbdvcsdcmsdsdmn",
+      "id": 12
+    },
+    {
+      "username": "prashanth",
+      "gender": "Male",
+      "email": "prashanth@gmail.com",
+      "phoneno": 7989714750,
+      "password": "gffhfjfjh",
+      "id": 13
+    },
+    {
+      "username": "suppy",
+      "gender": "Not to be disclosed",
+      "email": "suppy@gmail.com",
+      "phoneno": 8978977709,
+      "password": "12345",
+      "id": 15
+    },
+    {
+      "username": "jayanth",
+      "gender": "Male",
+      "email": "jayanth@gmail.com",
+      "phoneno": 7873555661,
+      "password": "!Bunny7989",
+      "id": 16
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<nav class="navbar background navbar-expand-lg  p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img style="mix-blend-mode: darken;" src="../../assets/download 2.png" alt="Logo" width="160" height="25"
+        class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mr-auto">
+        <a class="nav-link  mx-3 rounded-pill text-center" *ngIf="customerservice.adminLoggedIn" routerLink="/customers"
+          [routerLinkActive]="'active'"><i class="bi bi-house-door fs-5"></i> Home </a>
+        <a class="nav-link  mx-3  rounded-pill text-center" *ngIf="customerservice.adminLoggedIn"
+          routerLink="/add-customer" (click)="add()" [routerLinkActive]="'active'"><i class="bi bi-person-add fs-5"></i> Add
+          Customer </a>
+        <a class="nav-link  mx-3  rounded-pill text-center" routerLink="/transactions"
+          *ngIf="customerservice.customerLoggedIn" [routerLinkActive]="'active'"> <i class="bi bi-clock-history fs-5"></i> Order History
+         </a>
+        <a class="nav-link  mx-3 rounded-pill text-center" routerLink="/exchange"
+          *ngIf="customerservice.customerLoggedIn" [routerLinkActive]="'active'"> <i
+          class="bi bi-arrow-repeat fs-5"></i> Currency Exchange</a>
+        <a class="nav-link mx-3 bg-danger text-center d-lg-none text-white rounded-pill px-2"
+          *ngIf="customerservice.loggedIn" (click)="logout()" routerLink="/login"><i class="bi bi-box-arrow-right"></i>
+          Logout</a>
+       
+      </div>
+    </div>
+    
+    <a class="navbar-nav nav-link bg-danger text-center d-none d-lg-block text-white rounded-pill px-2"
+      *ngIf="customerservice.loggedIn" (click)="logout()" ><i class="bi bi-box-arrow-right"></i>
+      Logout</a>
+   
+  </div>
+</nav>
+<router-outlet></router-outlet>

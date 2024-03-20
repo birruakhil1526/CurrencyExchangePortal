@@ -1,0 +1,49 @@
+.text-truncate{
+    text-overflow: ellipsis;
+}
+.cardstyle{
+     width:17rem;height: 9.5rem;
+    
+      /* background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);  */
+    /* background: #00bf8f;  
+background: -webkit-linear-gradient(to right, #001510, #00bf8f); 
+background: linear-gradient(to right, #001510, #00bf8f);  */
+/* background: #1f4037;  
+/* background: -webkit-linear-gradient(to right, #99f2c8, #1f4037);   */
+background: 
+repeating-radial-gradient(
+  circle at 0 0, 
+  #9bc6f8,
+  #ccc 50px
+);
+
+}
+
+.my-card {
+    transition: all 0.3s ease; 
+    
+  }
+  
+  .my-card:hover {
+    font-weight: bold;
+    /* transform: scale(1.05);  */
+    background: 
+repeating-radial-gradient(
+  circle at 0 0, 
+  #78b5ff,
+  #ccc 50px
+);
+  }
+  .card-subtitle {
+    font-family: Courier, monospace;
+  }
+  .card-title  {
+    font-family: Courier, monospace;
+  }
+  .background{
+    border: none;
+    background-color: aquamarine;
+  }
+  
+  

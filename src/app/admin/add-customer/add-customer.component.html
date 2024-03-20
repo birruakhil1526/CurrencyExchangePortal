@@ -1,0 +1,130 @@
+<div class="text-center">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow border border-none">
+                    <div class="card-header background  text-center d-flex align-items-center">
+                        <a (click)="editCustomer()" class="btn btn-link text-dark">
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+                        <div class="mx-auto">
+                            <h4 class="card-title my-2">{{customerService.customerEdit == true ? 'Edit' :
+                                'Add'}} Customer</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form class=" needs-validation" [formGroup]="customerDetails" novalidate>
+                            <div class="container d-flex justify-content-center ">
+                                <div class="text-center">
+                                    <div class="row g-3 align-items-center mb-3">
+                                        <div class=" form-outline w-50 mx-auto ">
+                                            <label class="form-label">Firstname<span class="text-danger">*</span> :</label>
+                                            <input type="text" class="form-control border-secondary"
+                                                placeholder="Enter Firstname" formControlName="firstName" required>
+                                            <section
+                                                *ngIf="firstName?.invalid &&(firstName?.dirty||firstName?.touched)">
+                                                <div *ngIf="firstName?.errors?.['required']" class="asset1">firstname is
+                                                    required</div>
+                                                <div *ngIf="firstName?.errors?.['pattern']" class="asset1">Only
+                                                    Alphabets
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class=" form-outline w-50 mx-auto ">
+                                            <label class="form-label">Lastname<span class="text-danger">*</span> :</label>
+                                            <input type="text" class="form-control border-secondary"
+                                                placeholder="Enter Lastname" formControlName="lastName" required>
+                                            <section *ngIf="lastName?.invalid &&(lastName?.dirty||lastName?.touched)">
+                                                <div *ngIf="lastName?.errors?.['required']" class="asset1">lastname is
+                                                    required</div>
+                                                <div *ngIf="username?.errors?.['pattern']" class="asset1">Only Alphabets
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 align-items-center mb-3">
+                                        <div class=" form-outline w-50 mx-auto ">
+                                            <label class="form-label">Username<span class="text-danger">*</span> :</label>
+                                            <input type="text" class="form-control border-secondary"
+                                                placeholder="Enter Username" formControlName="username" required>
+                                            <section *ngIf="username?.invalid &&(username?.dirty||username?.touched)">
+                                                <div *ngIf="username?.errors?.['required']" class="asset1">username is
+                                                    required</div>
+                                                <div *ngIf="username?.errors?.['pattern']" class="asset1">Only Alphabets
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class=" form-outline w-50 mx-auto ">
+                                            <label class="form-label">Gender<span class="text-danger">*</span> :</label>
+                                            <select class="form-select border-secondary"
+                                                aria-label="Default select example" formControlName="gender">
+                                                <option class="text-secondary" value="" disabled selected>Select Gender
+                                                </option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Not to be disclosed">Not to be disclosed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 align-items-center mb-2">
+                                        <div class=" form-outline w-50  ">
+                                            <label for="mail" class="form-label">E-mail<span class="text-danger">*</span> :</label>
+                                            <input type="mail" class="form-control border-secondary"
+                                                formControlName="email" placeholder="Enter Mail" required>
+                                            <section *ngIf="email?.invalid &&(email?.dirty||email?.touched)">
+                                                <div *ngIf="email?.errors?.['required']" class="asset1">email is required</div>
+                                                    
+                                                <div *ngIf="email?.errors?.['pattern']" class="asset1">invalid email</div>
+                                                       
+                                            </section>
+                                        </div>
+                                        <div class=" form-outline w-50  ">
+                                            <label for="phoneNumber" class="form-label">Mobile No<span class="text-danger">*</span> :</label>
+                                            <input type="number" class="form-control border-secondary"
+                                                formControlName="phoneNumber" placeholder="Enter Mobile no" required>
+                                            <section
+                                                *ngIf="phoneNumber?.invalid &&(phoneNumber?.dirty||phoneNumber?.touched)">
+                                                <div *ngIf="phoneNumber?.errors?.['required']" class="asset1">Mobile no is
+                                                    required</div>
+                                                <div *ngIf="phoneNumber?.errors?.['pattern']" class="asset1">should be
+                                                    10
+                                                    digits</div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 align-items-center" *ngIf="!customerService.customerEdit">
+                                        <!-- <div class=" form-outline w-50 mx-auto ">
+                                            <label class="form-label">Role<span class="text-danger">*</span> :</label>
+                                            <select class="form-select border-secondary" placeholder="Select role"
+                                                formControlName="rolesENum">
+                                                <option value="CUSTOMER" selected>Customer</option>
+                                            </select>
+                                        </div> -->
+                                        <div class=" form-outline w-50 mx-auto " *ngIf="!customerService.customerEdit">
+                                            <label for="exampleInputPassword1" class="form-label">Password<span class="text-danger">*</span> :</label>
+                                            <input type="password" class="form-control border-secondary"
+                                                formControlName="password" placeholder="Enter the password" required>
+                                            <section *ngIf="password?.invalid &&(password?.dirty||password?.touched)">
+                                                <div *ngIf="password?.errors?.['required']" class="asset1">password
+                                                    is
+                                                    required</div>
+                                            </section>
+                                            <div *ngIf="password?.errors?.['pattern']" class="asset1">password strength
+                                                is weak</div>
+                                            <div *ngIf="password?.errors?.['pattern']" class="asset1">(use
+                                                A-Z,a-z,!@#$,0-9)</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button type="reset" class="btn btn-color mt-4" [disabled]="!customerDetails.valid"
+                                    (click)="submit()">Submit</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>

@@ -1,0 +1,101 @@
+<div class="background-image">
+<h1 class="my-4 text-center welcolor fw-bold">Welcome to Metrobank</h1>
+<!-- <div class="text-center"><button type="button" routerLink="/add-customer" (click)="addCustomer()" class="btn btn-outline-primary rounded-pill shadow text">Add Customer</button></div> -->
+<div class="table-responsive-sm my-3">
+  <table id="example" class=" container shadow border-none m-auto rounded-table">
+    <thead class="tablecolor text-center ">
+      <tr >
+        <th scope="col" class="py-2">
+          <p></p>Username
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>E-mail
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>Gender
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>Mobile no.
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>Accounts
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>
+          <p></p>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody class="text-center bg-white">
+
+      <tr class="table-white" *ngFor="let customer of customersD |  paginate :{
+        itemsPerPage:4,
+        currentPage:pageNumber,
+        totalItems:totalRecords
+      }  ">
+        <td>
+          <p></p>
+          {{customer.username}}
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+          {{customer.email}}
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+          {{customer.gender}}
+          <p></p>
+        </td>
+        <td>
+          <p></p>
+          {{customer.phoneNumber}}
+          <p></p>
+        </td>
+        <td>
+          <a (click)="accounts(customer.customerId)" routerLink="/accounts"><button
+              class="btn btn-success rounded-circle">
+              <i class="bi bi-bank"></i>
+            </button></a>
+        </td>
+        <td><a routerLink="/edit-customer/{{customer.customerId}}" (click)="editCustomer(customer.customerId,customer)"><button
+              class="btn btn-secondary rounded-circle my-2">
+              <i class="bi bi-pencil"></i>
+            </button>
+          </a></td>
+        <td><a class="text-danger" (click)="deleteCustomer(customer.customerId)"><button
+              class="btn btn-danger rounded-pill">
+              <i class="bi bi-trash"></i>
+            </button></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class=" row  justify-content-center mt-3" *ngIf="loading">
+    <div class="spinner-border text-primary col-1" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <pagination-controls (pageChange)="pageNumber =$event"></pagination-controls>
+</div>
+<!-- <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center ">
+    <li class="page-item"><a class="page-link bg-primary text-white cursor border border-none shadow" (click)="previousPage()" ><i class="bi bi-chevron-left"></i></a></li>
+    <li class="page-item"><a class="page-link bg-primary text-white cursor border border-none shadow" (click)="nextPage()" > <i class="bi bi-chevron-right"></i></a></li>
+  </ul>
+</nav> -->
+</div>
+
